@@ -1,0 +1,1 @@
+/home/django/.config/omarchy/current/theme/neovim.lua
