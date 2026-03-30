@@ -121,6 +121,14 @@ map("n", "<leader>tS", function()
   require("neotest").run.stop()
 end, { desc = "stop test run" })
 
+map("n", "<leader>tA", function()
+  require("neotest").run.run({ suite = true })
+end, { desc = "Run all tests" })
+
+map("n", "<leader>tF", function()
+  require("neotest").run.run(vim.fn.expand("%"))
+end, { desc = "Run all tests in file" })
+
 map("n", "]t", function()
   require("neotest").jump.next({ status = "failed" })
 end, { desc = "jump to next failed test" })
