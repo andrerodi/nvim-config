@@ -20,6 +20,6 @@ end, { desc = "fold level 2" })
 map("n", "<leader>z3", function()
   vim.opt.foldlevel = 3
 end, { desc = "fold level 3" })
-map("n", "<leader>zR", function()
+map("n", "<leader>zo", function()
   vim.opt.foldlevel = 99
 end, { desc = "fold open all" })
