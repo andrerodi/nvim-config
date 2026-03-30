@@ -128,3 +128,39 @@ end, { desc = "jump to next failed test" })
 map("n", "[t", function()
   require("neotest").jump.prev({ status = "failed" })
 end, { desc = "jump to prev failed test" })
+
+-- anywhere that runs after nvim-dap loads, e.g. inside the plugin's config = function()
+vim.fn.sign_define("DapBreakpoint", {
+  text = "●", -- or "" if you have nerd fonts
+  texthl = "DiagnosticError",
+  linehl = "",
+  numhl = "",
+})
+
+vim.fn.sign_define("DapBreakpointCondition", {
+  text = "◯",
+  texthl = "DiagnosticError",
+  linehl = "",
+  numhl = "",
+})
+
+vim.fn.sign_define("DapLogPoint", {
+  text = "◆",
+  texthl = "DiagnosticWarn",
+  linehl = "",
+  numhl = "",
+})
+
+vim.fn.sign_define("DapStopped", {
+  text = "▶",
+  texthl = "DiagnosticOk",
+  linehl = "Visual",
+  numhl = "DiagnosticOk",
+})
+
+vim.fn.sign_define("DapBreakpointRejected", {
+  text = "●",
+  texthl = "DiagnosticHint",
+  linehl = "",
+  numhl = "",
+})
