@@ -116,25 +116,28 @@ local function scaffold_dotnet(template, name)
 end
 
 require("which-key").add({
+  { "<leader>B", group = ".dotnet", icon = "👾" },
+})
+
+require("which-key").add({
   { "<leader>Bc", group = "create", icon = "🆕" },
 })
 
 map("n", "<leader>Bcc", function()
   scaffold_dotnet("class", "MyClass")
 end, { noremap = true, silent = true, desc = "new class" })
+
 map("n", "<leader>Bci", function()
   scaffold_dotnet("interface", "IMyInterface")
 end, { noremap = true, silent = true, desc = "new interface" })
+
 map("n", "<leader>Bcr", function()
   scaffold_dotnet("record", "MyRecord")
 end, { noremap = true, silent = true, desc = "new record" })
+
 map("n", "<leader>Bcs", function()
   scaffold_dotnet("struct", "MyStruct")
 end, { noremap = true, silent = true, desc = "new struct" })
-
-require("which-key").add({
-  { "<leader>B", group = ".dotnet", icon = "👾" },
-})
 
 map("n", "<leader>Bb", function()
   run_dotnet({ "build" })
