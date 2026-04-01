@@ -123,6 +123,10 @@ require("which-key").add({
   { "<leader>Bc", group = "create", icon = "🆕" },
 })
 
+require("which-key").add({
+  { "<leader>Br", group = "Roslyn", icon = "⌬" },
+})
+
 map("n", "<leader>Bcc", function()
   scaffold_dotnet("class", "MyClass")
 end, { noremap = true, silent = true, desc = "new class" })
@@ -162,3 +166,5 @@ end, { noremap = true, silent = true, desc = "dotnet test" })
 map("n", "<leader>Bp", function()
   run_dotnet({ "publish", "--configuration", "Release" })
 end, { noremap = true, silent = true, desc = "dotnet publish" })
+
+map("n", "<leader>Br", "<cmd>Roslyn target<cr>", { desc = "Roslyn target" })
