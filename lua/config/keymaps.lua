@@ -8,6 +8,7 @@ require("which-key").add({
   { "<leader>z", group = "fold", icon = "›" },
 })
 
+-- Fold level keymaps
 map("n", "<leader>z0", function()
   vim.opt.foldlevel = 0
 end, { desc = "fold level 0" })
@@ -23,3 +24,8 @@ end, { desc = "fold level 3" })
 map("n", "<leader>zo", function()
   vim.opt.foldlevel = 99
 end, { desc = "fold open all" })
+
+-- Move selected lines down
+map("v", "<A-Down>", ":m '>+1<CR>gv=gv")
+-- Move selected lines up
+map("v", "<A-Up>", ":m '<-2<CR>gv=gv")
