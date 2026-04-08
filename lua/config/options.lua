@@ -14,3 +14,6 @@ vim.opt.fillchars = {
   foldsep = "|",
   fold = " ",
 }
+
+-- Hide ai code completion suggestions by default, as they can be distracting for some users. You can enable it on demand with :AIEnable or :AIDisable.
+vim.g.ai_cmp = false
